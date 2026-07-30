@@ -46,7 +46,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::063884341292:role/github-infra-role
-          aws-region: us-east-2
+          aws-region: us-east-1
 
       - name: HashiCorp - Setup Terraform
         uses: hashicorp/setup-terraform@v3
