@@ -3,7 +3,7 @@ resource "aws_instance" "website-server" {
   instance_type = "t3.micro"
   key_name = "chave-site-prod"
   vpc_security_group_ids = [aws_security_group.website_sg.id]
-  iam_instance_profile = "ECR-EC2-Role"
+  iam_instance_profile = "EC2-ECR-Role"
 
 
 
