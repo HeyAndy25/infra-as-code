@@ -1,9 +1,9 @@
-# state.tf 
+# backend.tf 
 terraform { 
   backend "s3" { 
-    bucket = "terraform-state-anderson-estudo"  
+    bucket  = "seu-bucket-tfstate"  
     key     = "site/terraform.tfstate" 
-    region = "us-east-2"
+    region  = "us-east-1"
     encrypt = true
   }
 }
