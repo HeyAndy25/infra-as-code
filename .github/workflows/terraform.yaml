@@ -45,22 +45,22 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4.3.1
         with:
-          role-to-assume: arn:aws:iam::063884341292:role/github-infra-role
+          role-to-assume: arn:aws:iam::SUA_CONTA_AWS_ID:role/github-infra-role
           aws-region: us-east-2
           audience: sts.amazonaws.com
-          
+
       - name: HashiCorp - Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
         run: terraform init
-      
+
       - name: Terraform Validate
         run: terraform validate
-      
+
       - name: Terraform Plan
         run: terraform plan -out=tfplan
-      
+
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
         if: ${{ github.event.inputs.apply == 'true' }}
